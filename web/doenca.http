@@ -1,0 +1,20 @@
+@url = http://127.0.0.1:3001
+@id=c70e6df6-7f43-4c96-a174-78eef4fc93b4
+
+//Gets
+###
+GET {{url}}/doencas/{{id}} HTTP/1.1
+Accept: application/json
+
+###
+//Posts
+POST {{url}}/doencas HTTP/1.1
+Content-Type: application/json
+Accept: application/json
+
+{
+    "nome": "dodoi",
+    "transmissao": "solo",
+    "prevencao": "parar de ser otario",
+    "tratamento": "agrotoxico"
+}

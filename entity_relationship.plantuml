@@ -1,0 +1,59 @@
+@startuml hortech
+    ' avoid problems with angled crows feet
+    skinparam linetype ortho
+    entity "Planta" as e1{
+        *id:number <<generated>>
+        --
+        *nome:text
+        especie:text
+        tecnicas_plantio_replantio:text
+        infos_by_estacao:text
+        cor_folhas:text
+        num_frutos_colhidos:number
+        qtd_diaria_agua:number
+        qtd_media_sementes:number
+        nivel_incidencia_solar:number
+    }
+    entity "Solo" as e2{
+        *id:number <<generated>>
+        --
+        nivel_ph:number
+        tipo_solo:enum
+        temperatura:number
+        tipo_vaso:enum
+    }
+    entity "Doença" as e3{
+        *id:number <<generated>>
+        --
+        *nome:text
+        transmissao:text
+        prevencao:text
+        tratamento:text
+    }
+    entity "Agenda" as e4{
+        *id:number <<generated>>
+        --
+        horario:number
+    }
+    entity "Plantacao" as e5{
+        *id:number <<generated>>
+        --
+        solo:Solo <<FK>>
+        agenda:Agenda <<FK>>
+    }
+    entity "Usuario" as e6{
+        *id:number <<generated>>
+        --
+        *nome:text
+        *login:text
+        *senha:text
+        endereco:text
+    }
+
+    e5 }o--o{ e1
+    e5 }o--|| e2
+    e5 ||--|| e4
+    e3 }o--o{ e1
+    e6 ||--o{ e5
+@enduml
+

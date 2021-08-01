@@ -1,0 +1,18 @@
+@url = http://127.0.0.1:3001
+@id=59a9a42a-5c85-496c-9f2e-59e14527c251
+
+//Gets
+
+###
+//Posts
+POST {{url}}/plantacoes HTTP/1.1
+Content-Type: application/json
+Accept: application/json
+
+{
+    
+}
+###
+// Puts
+DELETE {{url}}/plantacoes/{{id}} HTTP/1.1
+Accept: application/json

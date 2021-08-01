@@ -1,0 +1,18 @@
+@url = http://127.0.0.1:3001
+@id=6a87df2a-9686-4400-88b0-af578b1859c3
+
+//Gets
+
+###
+//Posts
+POST {{url}}/agendas HTTP/1.1
+Content-Type: application/json
+Accept: application/json
+
+{
+    "horario": "12:20:05"
+}
+###
+// Puts
+DELETE {{url}}/agendas/{{id}} HTTP/1.1
+Accept: application/json
